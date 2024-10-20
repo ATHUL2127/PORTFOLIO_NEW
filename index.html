@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>My Portfolio</title>
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+
+    <!-- Navigation -->
+    <header>
+        <nav>
+            <ul>
+                <li><a href="#home">Home🏡</a></li>
+                <li><a href="#about">About📜</a></li>
+                <li><a href="#projects">Projects📁</a></li>
+                <li><a href="#contact">Contact📞</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Home Section -->
+    <section id="home">
+        <div class="intro">
+            <h1>Welcome to My Portfolio</h1>
+            <p>Hi, I'm ATHUL, a web developer</p>
+            <img src="img/athulphoto.jpg" alt="Profile Photo">
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about">
+        <h2>About Me</h2>
+        <p>Hello! I'm Athul, a 22-year-old aspiring technologist from the picturesque town of Payyannur in Kannur District, Kerala, India. In 2023, I proudly graduated with a BSc in Mathematics from Payyannur College, establishing a strong foundation in analytical thinking and problem-solving. Building on this mathematical background, I'm currently expanding my horizons in the world of computer science by pursuing a Master of Computer Applications (MCA) at the prestigious Cochin University of Science and Technology.
+                
+            My academic journey from pure mathematics at Payyannur College to applied computer science at Cochin University reflects my passion for learning and my drive to bridge the gap between theoretical concepts and practical applications. As a young professional at the intersection of mathematics and technology, I'm excited to leverage my analytical skills and growing technical expertise to tackle complex challenges in the digital world.
+            
+            I'm constantly learning and adapting to the ever-evolving tech landscape, eager to contribute my unique perspective to innovative projects. Whether it's developing efficient algorithms, creating user-friendly applications, or exploring the frontiers of data science, I'm ready to make my mark in the tech industry.
+            
+            Feel free to explore my projects and reach out if you'd like to connect or collaborate!</p>
+        <h3>Skills</h3>
+        <ul>
+            <li>C/C++</li>
+            <li>JAVA</li>
+            <li>JAVASCRIPT</li>
+            <li>PYTHON</li>
+            <li>HTML/CSS</li>
+            <li>MYSQL</li>
+        </ul>
+    </section>
+
+    <!-- Projects Section -->
+    <section id="projects">
+        <h2>Projects</h2>
+        <div class="project-grid">
+            <div class="project">
+                <h3>Federated Defense</h3>
+                <p>"A project aimed at enhancing the resilience of federated learning systems against data poisoning attacks through innovative defense mechanism"</p>
+                <a href="#">View Project</a>
+            </div>
+            <div class="project">
+                <h3>Polynomial Congruence</h3>
+                <p>"An exploration of polynomial congruences through the lens of the Chinese Remainder Theorem, providing insights into solving systems of modular equations."</p>
+                <a href="#">View Project</a>
+            </div>
+            <div class="project">
+                <h3>Heart disease Prediction</h3>
+                <p>"A mini machine learning model for heart disease prediction using python.Users are able to know whether a person have heart disease or not"</p>
+                <a href="#">View Project</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact">
+        <h2>Contact Me</h2>
+        <form id="contactForm">
+            <label for="name">Name:</label>
+            <input type="text" id="name" name="name" required>
+            <label for="email">Email:</label>
+            <input type="email" id="email" name="email" required>
+            <label for="message">Message:</label>
+            <textarea id="message" name="message" required></textarea>
+            <button type="submit">Submit</button>
+        </form>
+        <div id="thankYouMessage" style="display:none;"></div>
+    </section>
+
+    <script src="js/main.js"></script>
+    <script>
+        const contactForm = document.getElementById('contactForm');
+        const thankYouMessage = document.getElementById('thankYouMessage');
+
+        contactForm.addEventListener('submit', function(event) {
+            event.preventDefault(); // Prevent the form from submitting
+            
+            // Get user input
+            const name = document.getElementById('name').value;
+            const email = document.getElementById('email').value;
+            const message = document.getElementById('message').value;
+            
+            // Display thank you message
+            thankYouMessage.innerHTML = `
+                <p>Thank you for your message, <strong>${name}</strong>!</p>
+
+            `;
+            thankYouMessage.style.display = 'block'; // Show the thank you message
+
+            // Clear the form
+            contactForm.reset();
+        });
+    </script>
+</body>
+</html>
